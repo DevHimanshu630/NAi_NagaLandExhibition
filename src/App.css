@@ -10,16 +10,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('assets/Hornbill_Standee.jpg');
-  background-size: cover; 
-  /* background-position: center; */
+  background-image: url('assets/bg.jpeg');
+  background-size: 100% 100%; /* Stretch the image to fit the container */
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
 
+
+
 .tap_here {
   display: inline-block;
-  font-size: 20px;
   top: 5rem;
   padding: 20px 80px;
   background-color: #512b14;  /* Blue background */
@@ -27,13 +28,16 @@
   cursor: pointer;
   position: relative;
   color: white;
-  top: 25%;
+  /* top: 45%; */
+  margin-top: 5%;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  box-shadow: 30px;  
+
 }
 .content a{
   color: white !important;
   text-decoration: none;
+  font-size: 25px;
 }
 
 

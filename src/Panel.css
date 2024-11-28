@@ -1,154 +1,184 @@
+/* Reset margins and paddings globally */
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Set the body background image */
-  .App1 {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('assets/Hornbill_Standeewithoutcontent.jpg');
-    background-size: cover; 
-    /* background-position: center; */
-    background-repeat: no-repeat;
-  }
-  
-  /* Circle container with responsive grid layout */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the body background image */
+.App1 {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/Hornbill_banner_landscapejpg.jpg');
+  background-size: 100% 100%;
+  background-position: center center; 
+  background-repeat: no-repeat;
+}
+
+/* Circle container with responsive grid layout */
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 20px; /* Space between circles */
+  justify-items: center; /* Center the circles horizontally */
+  padding: 20px; /* Padding around the grid container */
+  justify-content: center;
+  margin-top: 7rem;
+}
+
+/* Each circle style */
+.circle {
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height to keep the circle shape */
+  border-radius: 50%; /* Make it circular */
+  background-color: #512b14;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center; /* Center text */
+  padding: 10px; /* Optional padding to make text fit better */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.circle:hover {
+  background-color: #854b26;
+  transform: scale(1.05); /* Add scale effect to simulate the bubble */
+}
+
+/* Circle title styling */
+.circle-title {
+  font-size: 20px; /* Adjust font size for better fit */
+  color: white;
+  text-align: center;
+  word-wrap: break-word; /* Break text into multiple lines if necessary */
+  padding: 2px 5px; /* Some padding around the text */
+  white-space: normal; /* Allow text to wrap normally */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Show ellipsis if text is too long */
+}
+
+/* Modal styles */
+.modal {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 80vh;
+  border: 5px solid white;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #512b14;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close:hover {
+  background-color: #854b26;
+}
+
+.tap_here {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px 80px;
+  background-color: #512b14;  /* Dark background */
+  border-radius: 25px;  /* Rounded corners */
+  cursor: pointer;
+  position: relative;
+  color: white;
+  top: 25%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+.home_icon {
+  position: fixed;
+  bottom: 120px; /* distance from the bottom */
+  right: 20px; /* distance from the right */
+  width: 60px; /* diameter of the circle */
+  height: 60px; /* diameter of the circle */
+  border-radius: 50%; /* makes it circular */
+  border: 2px solid #512b14; /* border color and width */
+  display: flex;
+  justify-content: center; /* centers the icon horizontally */
+  align-items: center; /* centers the icon vertically */
+  background-color: #fff; /* background color of the circle */
+  cursor: pointer;
+  font-size: 30px;
+  z-index: 10; /* ensures the icon is above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* optional shadow for the circle */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.home_icon:hover {
+  background-color: #512b14; /* Change background color on hover */
+  transform: scale(1.1); /* Slightly enlarge the home icon on hover */
+}
+
+.home_icon svg {
+  color: #333; /* Icon color */
+}
+
+.home_icon:hover svg {
+  color: #fff; /* Change icon color to white on hover */
+}
+
+/* Responsive Grid Layout for different screen sizes */
+@media (min-width: 1200px) {
   .circle-container {
-    /* display: grid;
-    grid-template-columns: repeat(6, 1fr);  */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between circles */
-    justify-items: center; /* Center the circles horizontally */
-    padding: 20px; /* Padding around the grid container */
-    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
   }
-  
-  /* Each circle style */
-  .circle {
-    width: 100px; /* Fixed width */
-    height: 100px; /* Fixed height to keep the circle shape */
-    border-radius: 50%; /* Make it circular */
-    background-color: #512b14;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-    text-align: center; /* Center text */
-    padding: 10px; /* Optional padding to make text fit better */
-    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .circle-container {
+    grid-template-columns: repeat(5, 1fr);
   }
-  
-  .circle:hover {
-    background-color: #854b26;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .circle-container {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  /* Circle title styling */
-  .circle-title {
-    font-size: 12px; /* Adjust font size to make it fit within the circle */
-    color: white;
-    text-align: center;
-    word-wrap: break-word; /* Break text into multiple lines if necessary */
-    padding: 2px 5px; /* Some padding around the text */
-    white-space: normal; /* Allow text to wrap normally */
-    overflow: hidden; /* Prevent text overflow */
-    text-overflow: ellipsis; /* Show ellipsis if text is too long */
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .circle-container {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  /* Modal styles */
-  .modal {
-    position: relative;
-    max-width: 80%;
-    max-height: 80%;
-    margin: auto;
+}
+
+@media (max-width: 575px) {
+  .circle-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  img {
-    max-width: 100%;
-    max-height: 80vh;
-    border: 5px solid white;
-  }
-  
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #512b14;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .close:hover {
-    background-color: #854b26;
-  }
-  
-  .tap_here {
-    display: inline-block;
-    font-size: 20px;
-    top: 5rem;
-    padding: 20px 80px;
-    background-color: #512b14;  /* Blue background */
-    border-radius: 25px;  /* Rounded corners */
-    cursor: pointer;
-    position: relative;
-    color: white;
-    top: 25%;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-  }
-  
-  
-  
- 
-  
-  /* @media (min-width: 1200px) {
-    .circle-container {
-      grid-template-columns: repeat(6, 1fr); 
-  }
-  
-  @media (max-width: 1199px) and (min-width: 992px) {
-    .circle-container {
-      grid-template-columns: repeat(5, 1fr); 
-    }
-  }
-  
-  @media (max-width: 991px) and (min-width: 768px) {
-    .circle-container {
-      grid-template-columns: repeat(4, 1fr); 
-    }
-  }
-  
-  @media (max-width: 767px) and (min-width: 576px) {
-    .circle-container {
-      grid-template-columns: repeat(3, 1fr); 
-    }
-  }
-  
-  @media (max-width: 575px) {
-    .circle-container {
-      grid-template-columns: repeat(2, 1fr); 
-    }
-  }
-   */
+}
