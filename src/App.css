@@ -3,137 +3,37 @@
   padding: 0;
 }
 
-/* Set the body background image */
+
 .App {
   position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('assets/bg.jpeg');
-  background-size: cover; /* Ensure the image covers the entire background */
-  /* background-position: center; Center the image */
+  background-image: url('assets/Hornbill_Standee.jpg');
+  background-size: cover; 
+  /* background-position: center; */
   background-repeat: no-repeat;
 }
 
-/* Circle container with responsive grid layout */
-.circle-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 circles per row by default */
-  gap: 20px; /* Space between circles */
-  justify-items: center; /* Center the circles horizontally */
-  padding: 20px; /* Padding around the grid container */
-}
 
-/* Each circle style */
-.circle {
-  width: 100px; /* Fixed width */
-  height: 100px; /* Fixed height to keep the circle shape */
-  border-radius: 50%; /* Make it circular */
-  background-color: #512b14;
+.tap_here {
+  display: inline-block;
+  font-size: 20px;
+  top: 5rem;
+  padding: 20px 80px;
+  background-color: #512b14;  /* Blue background */
+  border-radius: 25px;  /* Rounded corners */
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-  text-align: center; /* Center text */
-  padding: 10px; /* Optional padding to make text fit better */
-  overflow: hidden; /* Ensure content doesn't overflow */
-}
-
-.circle:hover {
-  background-color: #854b26;
-}
-
-/* Circle title styling */
-.circle-title {
-  font-size: 12px; /* Adjust font size to make it fit within the circle */
-  color: white;
-  text-align: center;
-  word-wrap: break-word; /* Break text into multiple lines if necessary */
-  padding: 2px 5px; /* Some padding around the text */
-  white-space: normal; /* Allow text to wrap normally */
-  overflow: hidden; /* Prevent text overflow */
-  text-overflow: ellipsis; /* Show ellipsis if text is too long */
-}
-
-/* Modal styles */
-.modal {
   position: relative;
-  max-width: 80%;
-  max-height: 80%;
-  margin: auto;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  max-width: 100%;
-  max-height: 80vh;
-  border: 5px solid white;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #512b14;
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  top: 25%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+.content a{
+  color: white !important;
+  text-decoration: none;
 }
 
-.close:hover {
-  background-color: #854b26;
-}
 
-/* Responsive Design */
-
-/* For screens larger than 1200px (XL) */
-@media (min-width: 1200px) {
-  .circle-container {
-    grid-template-columns: repeat(6, 1fr); /* 6 circles per row */
-  }
-}
-
-/* For screens between 992px and 1199px (Large screens) */
-@media (max-width: 1199px) and (min-width: 992px) {
-  .circle-container {
-    grid-template-columns: repeat(5, 1fr); /* 5 circles per row */
-  }
-}
-
-/* For screens between 768px and 991px (Medium screens) */
-@media (max-width: 991px) and (min-width: 768px) {
-  .circle-container {
-    grid-template-columns: repeat(4, 1fr); /* 4 circles per row */
-  }
-}
-
-/* For screens between 576px and 767px (Small screens) */
-@media (max-width: 767px) and (min-width: 576px) {
-  .circle-container {
-    grid-template-columns: repeat(3, 1fr); /* 3 circles per row */
-  }
-}
-
-/* For screens smaller than 576px (Extra Small screens) */
-@media (max-width: 575px) {
-  .circle-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 circles per row */
-  }
-}
