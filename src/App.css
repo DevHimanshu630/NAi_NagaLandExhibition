@@ -18,22 +18,24 @@
 
 
 
-
 .tap_here {
   display: inline-block;
   top: 5rem;
   padding: 20px 80px;
-  background-color: #512b14;  /* Blue background */
+  background-color: #512b14;  /* Button background */
   border-radius: 25px;  /* Rounded corners */
   cursor: pointer;
   position: relative;
   color: white;
-  /* top: 45%; */
   margin-top: 5%;
-  transition: all 0.3s ease;
-  box-shadow: 30px;  
-
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
+
+.tap_here:hover {
+  transform: scale(0.95); /* Scale the button to 95% of its size when clicked */
+}
+
 .content a{
   color: white !important;
   text-decoration: none;
